@@ -16,7 +16,7 @@ controller.spawn({
 
 controller.hears(
   ['^[dD]efine (.*)'],
-  'direct_message,ambient',
+  ['ambient', 'direct_message'],
   (bot, message) => {
     got(`https://mashape-community-urban-dictionary.p.mashape.com/define?term=${message.match[1]}`, {
       json: true,
@@ -38,7 +38,7 @@ controller.hears(
 
 controller.hears(
   ['[sS][hH][aA][rR][lL][eE][eE][nN]'],
-  'direct_message,ambient',
+  ['ambient', 'direct_message'],
   (bot, message) => {
     got(`https://andruxnet-random-famous-quotes.p.mashape.com/cat=movies`, {
       json: true,
@@ -55,7 +55,7 @@ controller.hears(
 
 controller.hears(
   ['^[rR]eddit (.+)'],
-  'direct_message,ambient',
+  ['ambient', 'direct_message'],
   (bot, message) => {
     got(`https://www.reddit.com/r/${message.match[1]}/hot.json`, {
       json: true,
