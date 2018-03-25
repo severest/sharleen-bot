@@ -1,0 +1,24 @@
+{
+  "name": "sharleen",
+  "version": "1.0.0",
+  "description": "Sharleen",
+  "main": "bot.js",
+  "scripts": {
+    "start": "node bot.js"
+  },
+  "dependencies": {
+    "botkit": "^0.6.12",
+    "got": "^8.3.0",
+    "lodash": "^4.17.5"
+  },
+  "devDependencies": {
+    "eslint": "^4.19.1",
+    "eslint-config-standard": "^11.0.0",
+    "eslint-plugin-import": "^2.9.0",
+    "eslint-plugin-node": "^6.0.1",
+    "eslint-plugin-promise": "^3.7.0",
+    "eslint-plugin-standard": "^3.0.1"
+  },
+  "author": "sean.b.everest@gmail.com",
+  "license": "ISC"
+}
