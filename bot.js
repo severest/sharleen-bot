@@ -14,6 +14,10 @@ controller.spawn({
   }
 });
 
+controller.on('rtm_close', () => {
+  process.exit(1);
+});
+
 controller.hears(
   ['^[dD]efine (.*)'],
   ['ambient', 'direct_message'],
