@@ -22,7 +22,7 @@ controller.hears(
   ['^[dD]efine (.*)'],
   ['ambient', 'direct_message'],
   (bot, message) => {
-    got(`https://mashape-community-urban-dictionary.p.mashape.com/define?term=${message.match[1]}`, {
+    got(`https://mashape-community-urban-dictionary.p.rapidapi.com/define?term=${message.match[1]}`, {
       json: true,
       headers: {
         'X-Mashape-Key': process.env.mashape
@@ -44,13 +44,13 @@ controller.hears(
   ['[sS][hH][aA][rR][lL][eE][eE][nN]'],
   ['ambient', 'direct_message'],
   (bot, message) => {
-    got(`https://andruxnet-random-famous-quotes.p.mashape.com/cat=movies`, {
+    got(`https://andruxnet-random-famous-quotes.p.rapidapi.com/cat=movies`, {
       json: true,
       headers: {
         'X-Mashape-Key': process.env.mashape
       }
     }).then((response) => {
-      bot.reply(message, response.body.quote);
+      bot.reply(message, response.body[0].quote);
     }).catch(() => {
       bot.reply(message, 'Oh noooooo, I fucked up')
     });
